@@ -1,13 +1,18 @@
-import http from "http";
-import fs from "fs/promises";
-import url from "url";
-import path from "path";
+// import http from "http";
+const http = require("http");
+const fs = require("fs/promises");
+// const http = require('url');
+const path = require("path");
+// import fs from "fs/promises";
+// import url from "url";
+// import path from "path";
 
 const PORT = 8080;
+console.log(__dirname);
 
 //get current path
-const __filename = url.pathToFileURL(import.meta.url);
-const __dirname = path.dirname(__filename.pathname).split(":")[1];
+// const __filename = url.pathToFileURL(import.meta.url);
+// const __dirname = path.dirname(__filename.pathname).split(":")[1];
 
 const server = http.createServer(async (req, res) => {
   let filePath;
